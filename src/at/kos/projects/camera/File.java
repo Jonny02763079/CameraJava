@@ -32,7 +32,7 @@ public class File {
         return date;
     }
 
-    public void getInfo() {
+    public void printInfo() {
         System.out.println("Name of file: " + this.name);
         System.out.println("Size of file: " + this.fileSize);
         System.out.println("Date of file: " + this.date);

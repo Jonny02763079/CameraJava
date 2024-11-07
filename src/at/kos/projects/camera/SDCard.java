@@ -28,9 +28,9 @@ public class SDCard {
         this.systemCapazity = systemCapazity;
     }
 
-    public void getfiles() {
+    public void printFiles() {
         for (File file : this.files) {
-            file.getInfo();
+            file.printInfo();
         }
     }
 

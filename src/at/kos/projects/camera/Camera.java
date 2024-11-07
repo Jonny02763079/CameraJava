@@ -107,7 +107,7 @@ public class Camera {
     }
 
     public void getAllFiles() {
-        sdCard.getfiles();
+        sdCard.printFiles();
     }
 
     public void getAmountOfAllFiles() {

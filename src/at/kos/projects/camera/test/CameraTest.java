@@ -1,84 +1,56 @@
 package at.kos.projects.camera.test;
 
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 import at.kos.projects.camera.Camera;
+import at.kos.projects.camera.Objective;
+import at.kos.projects.camera.Producer;
 import at.kos.projects.camera.SDCard;
 
 public class CameraTest {
-    @Test
-    public void testGetAllFiles() {
-        SDCard sdCard = new SDCard(32800);
-        Camera cam = new Camera(48, 180, "green", null, null, null);
-    }
 
-    @Test
-    public void testGetAmountOfAllFiles() {
+    private Camera cam;
+    private Objective objective;
+    private Producer producer;
+    private SDCard sdCard;
 
+    @Before
+    public void setUp() {
+        this.producer = new Producer("Heinzle", "Dubai");
+        this.sdCard = new SDCard(32800);
+        this.objective = new Objective(16, producer);
+        this.cam = new Camera(48, 180, "green", this.sdCard, this.objective, this.producer);
     }
 
     @Test
     public void testGetColor() {
-
-    }
-
-    @Test
-    public void testGetFreeCapazity() {
-
+        Assert.assertEquals(this.cam.getColor(), "green");
     }
 
     @Test
     public void testGetObjective() {
-
+        Assert.assertEquals(this.cam.getObjective(), this.objective);
     }
 
     @Test
     public void testGetPixel() {
-
+        Assert.assertEquals(this.cam.getPixel(), 48);
     }
 
     @Test
     public void testGetProducer() {
-
-    }
-
-    @Test
-    public void testGetResolution() {
-
+        Assert.assertEquals(this.cam.getProducer(), this.producer);
     }
 
     @Test
     public void testGetSdCard() {
-
-    }
-
-    @Test
-    public void testGetSystemCapazity() {
-
+        Assert.assertEquals(this.cam.getSdCard(), this.sdCard);
     }
 
     @Test
     public void testGetWeight() {
-
-    }
-
-    @Test
-    public void testSetObjective() {
-
-    }
-
-    @Test
-    public void testSetResolution() {
-
-    }
-
-    @Test
-    public void testSetSdCard() {
-
-    }
-
-    @Test
-    public void testTakePicture() {
-
+        Assert.assertEquals(this.cam.getWeight(), 180);
     }
 }
