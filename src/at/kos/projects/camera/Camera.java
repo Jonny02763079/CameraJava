@@ -1,7 +1,5 @@
 package at.kos.projects.camera;
 
-import java.util.*;
-
 import java.time.LocalDateTime;
 
 public class Camera {
